@@ -1,0 +1,14 @@
+.home-link {
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+  }
+  .home-link:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  /* .active-link:hover{
+      background-color: var(--dark-blue);
+  } */

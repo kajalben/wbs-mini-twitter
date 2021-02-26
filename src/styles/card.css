@@ -1,0 +1,36 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.card-container .card-menu{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.card-container .card-menu span{
+    align-self: center;
+}
+
+.card-container .card-text{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.card-img{
+    border-radius: 0.5rem;
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.makeStyles-toolbar-5{
+    min-height: 0 !important;
+}
