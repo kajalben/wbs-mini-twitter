@@ -1,0 +1,31 @@
+@import "./footer.css";
+@import "./header.css";
+@import "./main.css";
+@import "./app.css";
+
+:root {
+  --dark-blue: #00227b;
+  --light-blue: #3949ab;
+  --dark-gray: ##8d8d8d;
+  --light-gray: #bdbdbd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
