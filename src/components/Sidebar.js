@@ -4,12 +4,15 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MailIcon from "@material-ui/icons/Mail";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Messages from "./Messages";
-import Main from "./Main";
+import Profile from "./Profile";
 import { Route, Switch, NavLink } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -17,6 +20,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    marginTop: '24',
   },
   appBar: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -46,20 +50,25 @@ const menuItems = [
   },
   {
     menu: "Inpox",
-    link: "/",
-    icon: <MailIcon />,
-  },
-  {
-    menu: "Message",
-    link: "/",
+    link: "/messages",
     icon: <MailIcon />,
   },
 ];
 
-export default function Sidebar({ messages, users }) {
+export default function Sidebar({ messages, users, myUser }) {
+  
   const classes = useStyles();
+
+  
   return (
     <div className={classes.root}>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" noWrap>
+            Mini Twitter
+          </Typography>
+        </Toolbar>
+      </AppBar>
       <Drawer
         className={classes.drawer}
         variant="permanent"
@@ -84,11 +93,11 @@ export default function Sidebar({ messages, users }) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-          <Route exact path="/">
-            <Messages messages={messages} users={users} />
+          <Route path="/messages/:id?">
+            <Messages messages={messages} users={users}  />
           </Route>
           <Route exact path="/profile">
-            <Main />
+            <Profile {...myUser}/>
           </Route>
         </Switch>
       </main>

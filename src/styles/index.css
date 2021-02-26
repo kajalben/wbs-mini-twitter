@@ -4,6 +4,7 @@
 @import "./app.css";
 @import './card.css';
 @import './sidebar.css';
+@import './profile.css';
 
 :root {
   --dark-blue: #00227b;

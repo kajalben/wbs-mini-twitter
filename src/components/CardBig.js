@@ -62,7 +62,7 @@ export default function Card({ _id, date, text, image_url, user, users }) {
             </div>
             <div className="card-text">{text}</div>
             <img
-              className="card-img"
+              className="card-img-big"
               src={image_url}
               alt="image"
               onClick={(id) => handleClick(_id)}

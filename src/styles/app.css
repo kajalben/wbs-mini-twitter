@@ -1,7 +1,6 @@
-.APP{
-    min-height: 550px;
-    width: 100%; 
+.APP{width: 100%; 
 }
+
 
 .spinner i {
     color: var(--dark-blue);
