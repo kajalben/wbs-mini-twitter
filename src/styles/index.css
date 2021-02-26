@@ -2,11 +2,13 @@
 @import "./header.css";
 @import "./main.css";
 @import "./app.css";
+@import './card.css';
+@import './sidebar.css';
 
 :root {
   --dark-blue: #00227b;
   --light-blue: #3949ab;
-  --dark-gray: ##8d8d8d;
+  --dark-gray: #8d8d8d;
   --light-gray: #bdbdbd;
 }
 
