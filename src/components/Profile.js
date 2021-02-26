@@ -12,7 +12,7 @@ const Profile = () =>{
                   <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></img>
               </a>
               <h1>Camila Smith</h1>
-              <p>deydey@twbs.com</p>
+              <p>deydey@wbs.com</p>
           </div>
 
           <ul className="nav nav-pills nav-stacked">
