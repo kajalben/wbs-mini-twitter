@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/wbs-mini-twitter/static/css/main.13387d7b.chunk.css",
+    "main.js": "/wbs-mini-twitter/static/js/main.f59debc2.chunk.js",
+    "main.js.map": "/wbs-mini-twitter/static/js/main.f59debc2.chunk.js.map",
+    "runtime-main.js": "/wbs-mini-twitter/static/js/runtime-main.ae35fe75.js",
+    "runtime-main.js.map": "/wbs-mini-twitter/static/js/runtime-main.ae35fe75.js.map",
+    "static/js/2.615fda4d.chunk.js": "/wbs-mini-twitter/static/js/2.615fda4d.chunk.js",
+    "static/js/2.615fda4d.chunk.js.map": "/wbs-mini-twitter/static/js/2.615fda4d.chunk.js.map",
+    "index.html": "/wbs-mini-twitter/index.html",
+    "static/css/main.13387d7b.chunk.css.map": "/wbs-mini-twitter/static/css/main.13387d7b.chunk.css.map",
+    "static/js/2.615fda4d.chunk.js.LICENSE.txt": "/wbs-mini-twitter/static/js/2.615fda4d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ae35fe75.js",
+    "static/js/2.615fda4d.chunk.js",
+    "static/css/main.13387d7b.chunk.css",
+    "static/js/main.f59debc2.chunk.js"
+  ]
+}
