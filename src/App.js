@@ -42,8 +42,10 @@ function App() {
 
   const getMessages = () => {
     setIsLoading(true);
+    //get All Post
     let URL = 'https://twittersucksbad.herokuapp.com/messages/'
   
+    //get post by User Search
     if (query) {
       const sanitizedInput = query.replace(/[^\w\d\s.]+/g, "").toLowerCase();
       // const newResults =
@@ -67,20 +69,20 @@ function App() {
       });
   };
 
+  //get All Users
   const getUsers = (url) => {
     setIsLoading(true);
     const endpoint = encodeURI(url);
-    // Get message  from API
     fetchData(endpoint).then((data) => {
       setIsLoading(false);
       setUsers(data.data);
     });
   };
 
+  //get User profile
   const getMyUser = (url) => {
     setIsLoading(true);
     const endpoint = encodeURI(url);
-    // Get message  from API
     fetchData(endpoint).then((data) => {
       setIsLoading(false);
       setMyUser(data);
