@@ -120,6 +120,9 @@ function App() {
           </Grid>
           <Grid item xs={12} sm={7}>
             <Switch>
+              <Route exact path="/">
+                {messages && users && dispalyMessages()}
+              </Route>
               <Route path="/post/:type/:id?">
                 {messages && users && dispalyMessages()}
               </Route>
