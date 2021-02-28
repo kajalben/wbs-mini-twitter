@@ -9,6 +9,7 @@ import Sidebar from "./components/Sidebar";
 import Messages from "./components/Messages";
 import Profile from "./components/Profile";
 import Users from "./components/Users";
+import Filter from './components/Filter';
 
 function App() {
   const [messages, setMessages] = useState();
@@ -17,6 +18,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [userInput, setUserInput] = useState();
   const [query, setQuery] = useState();
+  const [isCheck, setIsCheck] = useState(false);
+
 
   const userUrl = "https://twittersucksbad.herokuapp.com/users/";
   const myUserUrl =
@@ -30,7 +33,7 @@ function App() {
 
   useEffect(() => {
     getMessages();
-  }, [query]);
+  }, [query, isCheck]);
 
   const handleChangeInput = (e) => {
     if(e.key === "Enter") setQuery(userInput);
@@ -39,19 +42,9 @@ function App() {
 
   const getMessages = () => {
     setIsLoading(true);
-    
-    //get All post
-    if (!query) {
-      const msgURL = "https://twittersucksbad.herokuapp.com/messages/";
-      const endpoint = encodeURI(msgURL);
-      // Get message  from API
-      fetchData(endpoint).then((data) => {
-        setIsLoading(false);
-        setMessages(data);
-      });
-    }
-    //get post by search
-    else {
+    let URL = 'https://twittersucksbad.herokuapp.com/messages/'
+  
+    if (query) {
       const sanitizedInput = query.replace(/[^\w\d\s.]+/g, "").toLowerCase();
       // const newResults =
       //   messages &&
@@ -61,12 +54,17 @@ function App() {
       // setIsLoading(false);
       // setMessages(newResults);
 
-      const msgURL = `https://twittersucksbad.herokuapp.com/messages?text=${sanitizedInput}`;
-      fetchData(msgURL).then((data) => {
+      URL = `https://twittersucksbad.herokuapp.com/messages?text=${sanitizedInput}`;
+    }
+    //sort post by date 
+    if(isCheck){
+      URL = `https://twittersucksbad.herokuapp.com/messages?date=desc`;
+    }
+      const endpoint = encodeURI(URL);
+      fetchData(endpoint).then((data) => {
         setIsLoading(false);
         setMessages(data);
       });
-    }
   };
 
   const getUsers = (url) => {
@@ -105,6 +103,10 @@ function App() {
     }
   };
 
+  const handleDateFilter = () =>{
+    setIsCheck(!isCheck);
+  }
+
   return (
     <div className="App">
       <Grid className="grid-contianer" className="grid-container" container>
@@ -115,10 +117,10 @@ function App() {
           container
           style={{ minHeight: "calc(100vh - 136px)", marginTop: "0.5rem" }}
         >
-          <Grid item xs={12} sm={2}>
+          <Grid item xs={12} sm={12} md={2}>
             <Sidebar onClick={ () => setQuery('')}/>
           </Grid>
-          <Grid item xs={12} sm={7}>
+          <Grid item xs={12} sm={12} md={5}>
             <Switch>
               <Route exact path="/">
                 {messages && users && dispalyMessages()}
@@ -131,7 +133,10 @@ function App() {
               </Route>
             </Switch>
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={12} md={3}>
+            {users && <Filter checked={isCheck}  onChange={handleDateFilter}/>}
+          </Grid>
+          <Grid item xs={12} sm={12} md={2}>
             {users && <Users users={users} />}
           </Grid>
         </Grid>

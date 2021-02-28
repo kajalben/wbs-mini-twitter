@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
     "& > *": {
       margin: theme.spacing(1),
-      width: `calc(100% - 30%)`,
+      width: `calc(100%)`,
     },
   },
   paper: {
