@@ -5,7 +5,7 @@ import Avatar from "@material-ui/core/Avatar";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import { useHistory } from "react-router-dom";
 
-const paddingWidth = 600;
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
     "& > *": {
       margin: theme.spacing(1),
-      width: `calc(100% - ${paddingWidth}px)`,
+      width: `calc(100% - 30%)`,
     },
   },
   paper: {
@@ -40,8 +40,7 @@ export default function Card({ _id, date, text, image_url, user, users }) {
   }, []);
 
   const handleClick = (id) => {
-    console.log(id);
-    history.push(`/messages/${id}`);
+    history.push(`/post/messages/${id}`);
   };
 
   return (

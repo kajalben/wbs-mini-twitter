@@ -1,22 +1,8 @@
-.home-link {
-    margin: 0;
-    padding: 0;
-    color: var(--dark-blue);
-    text-decoration: none;
-  }
-  .home-link:hover {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.7);
-  }
+
 
   .active-link{
-    color: var(--dark-blue);
-    font-weight: 500;
+    color: var(--dark-blue) !important;
+    text-decoration: underline !important;
   }
-  .menu-icon{
-    color: var(--dark-blue);
-  }
-
-  /* .active-link:hover{
-      background-color: var(--dark-blue);
-  } */
+ 
+ 

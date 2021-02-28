@@ -5,6 +5,7 @@
 @import './card.css';
 @import './sidebar.css';
 @import './profile.css';
+@import './user.css';
 
 :root {
   --dark-blue: #00227b;
@@ -12,6 +13,7 @@
   --dark-gray: #8d8d8d;
   --light-gray: #bdbdbd;
 }
+
 
 * {
   box-sizing: border-box;
@@ -31,4 +33,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a{
+ color : var(--dark-gray) !important;
+}
+
+a:hover{
+  text-decoration: none !important;
 }
